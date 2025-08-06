@@ -36,7 +36,7 @@ if uploaded_file and geojson_file:
         geo_data=geojson_data,
         data=df,
         columns=["District", "Compliance %"],
-        key_on="feature.properties.DISTRICT",  # Adjust key if needed
+        key_on="feature.properties.district",  # Adjust key if needed
         fill_color='YlGn',
         fill_opacity=0.7,
         line_opacity=0.2,

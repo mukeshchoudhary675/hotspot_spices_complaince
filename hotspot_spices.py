@@ -26,7 +26,7 @@ if uploaded_file and geojson_file:
     geojson_data = json.load(geojson_file)
 
     # Normalize district names for merge (you can add more cleaning if needed)
-    df['District'] = df['District'].str.strip().str.lower()
+    df['District'] = df['District'].str.lower().str.strip()
     df['Compliance %'] = df['Compliance %'].astype(float)
 
     # Create map
@@ -36,7 +36,7 @@ if uploaded_file and geojson_file:
         geo_data=geojson_data,
         data=df,
         columns=["District", "Compliance %"],
-        key_on="feature.properties.district",  # Adjust key if needed
+        key_on="feature.properties.district"
         fill_color='YlGn',
         fill_opacity=0.7,
         line_opacity=0.2,
